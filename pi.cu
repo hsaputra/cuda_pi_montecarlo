@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "./common.h"
 
 using namespace std;
 
@@ -29,6 +28,7 @@ void count_samples_in_circles(float* d_randNumsX, float* d_randNumsY, int* d_cou
 
   __syncthreads();
 
+  // Pick thread 0 for each block to collect all points from each Thread.
   if (threadIdx.x == 0) 
   {    
     int totalInCircleForABlock = 0;    
@@ -78,7 +78,7 @@ int main(void) {
   if ( cudaSuccess != cudaGetLastError() )
     cout << "Error!\n";
 
-  CUDA_CALL(cudaDeviceSynchronize());
+  cudaDeviceSynchronize();
 
   // Return back the vector from device to host
   int* h_countInBlocks = new int[num_blocks];
