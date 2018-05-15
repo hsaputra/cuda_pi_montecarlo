@@ -16,3 +16,11 @@ nvcc pi.cu -o pi
 ./pi
 Estimated Value: 3.14144
 ```
+
+```
+nvcc pi_timed.cu -o pi
+./pi
+Elapsed time Slow: 101.526
+Elapsed time Coales: 6.80678
+Estimated Value: 3.1417
+```
