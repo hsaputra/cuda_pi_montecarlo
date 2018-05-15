@@ -78,8 +78,6 @@ int main(void) {
   if ( cudaSuccess != cudaGetLastError() )
     cout << "Error!\n";
 
-  cudaDeviceSynchronize();
-
   // Return back the vector from device to host
   int* h_countInBlocks = new int[num_blocks];
   cudaMemcpy(h_countInBlocks, d_countInBlocks, countBlocks, cudaMemcpyDeviceToHost);
