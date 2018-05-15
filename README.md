@@ -6,3 +6,7 @@ Using CUDA and GPGPU computing to caculate estimation of Pi using Monte Carlo wi
 The code is using 500 threads per block and each process will process 1000 points.
 
 Using the shared memory to collect points in a block.
+
+Compile the code with `nvcc pi.cu -o pi` and then run the executable `pi`.
+
+Make sure NVIDIA GPU is available with CUDA toolkit installed.
