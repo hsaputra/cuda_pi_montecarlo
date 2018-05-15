@@ -10,3 +10,9 @@ Using the shared memory to collect points in a block.
 Compile the code with `nvcc pi.cu -o pi` and then run the executable `pi`.
 
 Make sure NVIDIA GPU is available with CUDA toolkit installed.
+
+```
+nvcc pi.cu -o pi
+./pi
+Estimated Value: 3.14144
+```
